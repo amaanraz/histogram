@@ -1,0 +1,166 @@
+h1{
+    font-family: Helvetica;
+    font-weight: 500;
+    padding-left: 7px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 550px;
+    flex-wrap: wrap;
+  }
+  .container1 {
+    display: flex;
+    width: 100%;
+    height: 350px;
+    flex-wrap: wrap;
+  }
+
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row1{
+    /* flex: 2 -> takes two thirds */
+    flex: 2;
+    flex-direction: row;
+    color: white;
+    border-color: white;
+    border-width: 8px;
+    border-style: solid;
+    background-color: #e9eff1;
+}
+
+.row2 {
+    flex: 1;
+    color: white;
+    border-color: white;
+    border-width: 8px;
+    border-style: solid;
+    background-color: #e9eff1;
+}
+
+.rowspan {
+    flex: 2;
+    color: white;
+    border-color: white;
+    border-width: 8px;
+    border-style: solid;
+    background-color: #e9eff1;
+}
+
+
+.row{
+    flex: 1;
+    flex-direction: row;
+}
+
+.titles{
+    color: #d51616;
+    padding-left: 15px;
+    font-family: Georgia;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.basic{
+    color: black;
+    padding-left: 50px;
+    padding-bottom: 6px;
+}
+
+.basic1{
+    color: black;
+    padding-left: 10px;
+    font-size: 18px;
+    padding-bottom: 6px;
+    display: inline-block;
+}
+
+.basic2{
+    color: black;
+    padding-left: 45px;
+    font-size: 14.5px;
+}
+
+.field{
+    margin: 6px;
+    width: 80px;
+    align-self: center;
+    padding: 5px;
+}
+
+.newgrade{
+    margin: 5px;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+.progress {
+    position: relative;
+    width: 210px;
+    height: 29px;
+    background: #e9eff1;
+    overflow: hidden;
+    padding-bottom: 1px;
+  }
+  
+.progress__fill {
+    width: 0%;
+    height: 100%;
+    background: #d51616;
+    transition: all 0.2s;
+}
+  
+.progress__text {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px "Quicksand", sans-serif;
+    color: black;
+}
+  
+
+/* alert box */
+ /* The alert message box */
+ .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    display: none;
+    
+  }
+
+  .mess{
+    /* the message */
+    font-weight: bold;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  } 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histogram</title>
+    <link rel="stylesheet" href="./histogram.css"/>
+    <script src="./calculate.js" defer></script>
+</head>
+<body>
+    <h1>Histogram Generator</h1>
+
+    <!-- error message box -->
+    <div class="alert" id = "alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <div class = "mess" id = "mess">Alert Message</div>
+    </div> 
+    
+    <!-- Have 2 columns, second one with 2 rows -->
+    <div class="grid">
+        <div class="container">
+            <div class="column">
+              <div class="rowspan">
+                <p class="titles">Lower bounds</p>
+                <!-- rows in here -->
+                <div class="container">
+                    <div class="column">
+                        <div class="row">
+                            <p class="basic">Max</p>
+                            <p class="basic">A+</p>
+                            <p class="basic">A</p>
+                            <p class="basic">A-</p>
+                            <p class="basic">B+</p>
+                            <p class="basic">B</p>
+                            <p class="basic">B-</p>
+                            <p class="basic">C+</p>
+                            <p class="basic">C</p>
+                            <p class="basic">C-</p>
+                            <p class="basic">D</p>
+                            <p class="basic">F</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <input type="number" class="field" value="100.00" id="max" onblur="getMax()">
+                            <input type="number" class="field" value="95.00" id="A1" onblur="getA1()">
+                            <input type="number" class="field" value="90.00" id="A2" onblur="getA2()">
+                            <input type="number" class="field" value="85.00" id="A3" onblur="getA3()">
+                            <input type="number" class="field" value="80.00" id="B1" onblur="getB1()">
+                            <input type="number" class="field" value="75.00" id="B2" onblur="getB2()">
+                            <input type="number" class="field" value="70.00" id="B3" onblur="getB3()">
+                            <input type="number" class="field" value="65.00" id="C1" onblur="getC1()">
+                            <input type="number" class="field" value="60.00" id="C2" onblur="getC2()">
+                            <input type="number" class="field" value="55.00" id="C3" onblur="getC3()">
+                            <input type="number" class="field" value="50.00" id="D" onblur="getD()">
+                            <input type="number" class="field" value="0.00" id="F" onblur="getF()">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="hidden">
+                            I am hidden
+                        </div>
+                    </div>
+                </div>
+              </div> 
+            </div>
+            <div class="column">
+              <div class="row1">
+                <p class="titles">Histogram</p>
+                <div class="container1">
+                    <div class="column">
+                        <div class="row">
+                            <p class="basic2">A+</p>
+                            <p class="basic2">A</p>
+                            <p class="basic2">A-</p>
+                            <p class="basic2">B+</p>
+                            <p class="basic2">B</p>
+                            <p class="basic2">B-</p>
+                            <p class="basic2">C+</p>
+                            <p class="basic2">C</p>
+                            <p class="basic2">C-</p>
+                            <p class="basic2">D</p>
+                            <p class="basic2">F</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <div class="progress" id="A+">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="A">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="A-">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="B+">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="B">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="B-">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="C+">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="C">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="C-">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="D1">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                            <div class="progress" id="F1">
+                                <div class="progress__fill"></div>
+                                <span class="progress__text">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="hidden">
+                            I am hidden
+                        </div>
+                    </div>
+                </div>
+              </div>
+            
+              <div class="row2">
+                <div class="row">
+                    <p class="basic1">New grade:</p>
+                    <input type="number" class="newgrade", id ="newgrade">
+                    <button onclick="add()">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
